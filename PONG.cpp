@@ -3,6 +3,15 @@
 #include <raylib.h>
 #include <iostream>
 
+struct player 
+{
+	int x;
+	int y;
+	int width = 0;
+	int height = 0;
+	int score = 0
+};
+
 int main()
 {
    
