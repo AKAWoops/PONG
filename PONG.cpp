@@ -1,15 +1,11 @@
 // PONG.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
-
+#include <raylib.h>
 #include <iostream>
 
 int main()
 {
-    std::cout << "Hello World!\n";
-
-    //testtesttets
-    //test 2323222
-    //what the fuck 
+   
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
