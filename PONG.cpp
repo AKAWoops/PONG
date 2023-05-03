@@ -9,8 +9,8 @@ struct player
 {
 	int x;
 	int y;
-	int width = 0;
-	int height = 0;
+	int width = 20;
+	int height = 70;
 	int score = 0;
 };
 
@@ -47,15 +47,22 @@ int main()
 
 
 
-		BeginDrawing();
-		ClearBackground(BLACK);
-		DrawRectangle(0, 0, (WIDTH / 2), HEIGHT, BLACK);
-		DrawRectangle((WIDTH / 2), 0, (WIDTH / 2), HEIGHT, WHITE);
-		DrawRectangle(player.x, player.y, player.width, player.height, WHITE);
-		DrawText(intTochar(player.score), (WIDTH / 2) - 200, 30, 48, WHITE);
-		
-		
 
+	BeginDrawing();
+	ClearBackground(BLACK);
+	DrawRectangle(0, 0, (WIDTH / 2), HEIGHT, BLACK);
+	DrawRectangle((WIDTH / 2), 0, (WIDTH / 2), HEIGHT, WHITE);
+	DrawRectangle(player.x, player.y, player.width, player.height, WHITE);
+	//DrawText(intTochar(player.score), (WIDTH / 2) - 200, 30, 48, WHITE);
+
+	if (checkCollision(player.x, ball.x, player.y, ball.y, player.width, player.height, ball.j)
+	{
+	//if collides with ball and player is a player multiply to reverse the balls trajectory
+	}
+	
+		while (!WindowShouldClose());
+		
+		CloseWindow();
 	}
 
 
