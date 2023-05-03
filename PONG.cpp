@@ -60,13 +60,13 @@ int main()
 	{
 
 		BeginDrawing();
-		ClearBackground(BLACK);
+		ClearBackground(BLACK);// clears backgournd and sets it black
 		DrawRectangle(0, 0, (WIDTH / 2), HEIGHT, BLACK);
 		DrawRectangle((WIDTH / 2), 0, (WIDTH / 2), HEIGHT, WHITE);
-		DrawRectangle(player.x, player.y, player.width, player.height, WHITE);
-		DrawRectangle(cpu.x, cpu.y, cpu.width, cpu.height, BLACK);
-		DrawText(intTochar(player.score), (WIDTH / 2) - 200, 30, 48, WHITE);
-		DrawText(intTochar(cpu.score), (WIDTH / 2) + 200, 30, 48, BLACK);
+		DrawRectangle(player.x, player.y, player.width, player.height, WHITE); // draws a paddle using variables from the player struct
+		DrawRectangle(cpu.x, cpu.y, cpu.width, cpu.height, BLACK);// draws a paddle using variables from the CPU struct
+		DrawText(intTochar(player.score), (WIDTH / 2) - 200, 30, 48, WHITE);// sets players score onto the screen not working
+		DrawText(intTochar(cpu.score), (WIDTH / 2) + 200, 30, 48, BLACK);// sets cpu score onto screen not working odd
 
 		if (checkCollision(player.x, ball.x, player.y, ball.y, player.width, player.height, ball.j) || checkCollision(cpu.x, ball.x, cpu.y, ball.y, cpu.width, cpu.height, ball.j))
 		{
