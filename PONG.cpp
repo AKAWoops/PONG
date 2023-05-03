@@ -73,9 +73,9 @@ int main()
 			ball.Ballx = -1 * ball.Ballx;	//if collides with ball and player is a player multiply to reverse the balls trajectory
 		}
 
-		cpu.y = ball.y;
+		cpu.y = ball.y;// makes sure the cpu y position is always equal to balls y position
 
-		if (ball.x < (WIDTH / 2)) DrawCircle(ball.x, ball.y, ball.j, WHITE);
+		if (ball.x < (WIDTH / 2)) DrawCircle(ball.x, ball.y, ball.j, WHITE); //this function draws a rectangle usig vairABLES FORM ball struct
 
 		else DrawCircle(ball.x, ball.y, ball.j, BLACK);
 		EndDrawing();
@@ -99,7 +99,6 @@ int main()
 			ball.y = 120;
 			ball.Ballx = 5;
 		}
-
 		if (ball.y < 5)
 		{
 			ball.Bally = -1 * ball.Bally;
@@ -108,7 +107,10 @@ int main()
 		else if (ball.y > HEIGHT - 5)
 		{
 			ball.Bally = -(ball.Bally);
-		}// key inputs for player paddle
+		}
+		
+		
+		// key inputs for player paddle
 		if (IsKeyDown(KEY_W) || IsKeyDown(KEY_UP))
 		{
 
