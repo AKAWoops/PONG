@@ -9,14 +9,28 @@
 #define WIDTH 640 //width is 640px screen width
 #define HEIGHT 480 //height is 480px screen height
 
-struct player 
+struct player1 
 {
-	int x;
-	int y;
+	int p1x;
+	int p1y;
 	int width = 20;
 	int height = 70;
 	int score = 0;
 };
+
+struct player2
+{
+	int p2x;
+	int p2y;
+	int width = 20;
+	int height = 70;
+	int score = 0;
+};
+
+//struct cpu
+//{
+//
+//};
 
 struct ball 
 {
@@ -29,19 +43,23 @@ struct ball
 
 };
 
-const char * intTochar(int a);
+const char* intTochar(int a);
 bool checkCollision(int x1, float x2, int y1, float y2, int w1, int h1, float j);
 
 
 int main()
 {
-	struct player player;
-	player.x = 20;
-	player.y = 100;
+	struct player1 player1;
+	player1.p1x = 20;
+	player1.p1y = 100;
 
-	struct player cpu;
+	struct player2 player2;
+	player2.p2x = WIDTH - 35;
+	player2.p2y = 100;
+
+	/*struct player cpu;
 	cpu.x = WIDTH - 35;
-	cpu.y = 100;
+	cpu.y = 100;*/
 
 	struct ball ball;
 	ball.x = (WIDTH / 2) - ball.j;
@@ -51,7 +69,7 @@ int main()
 
 
 
-	InitWindow(WIDTH, HEIGHT, "PONG CLONE");
+	InitWindow(WIDTH, HEIGHT, "PONG CLONE By Mark Ballinger");
 	SetTargetFPS(60);
 
 
@@ -63,17 +81,17 @@ int main()
 		ClearBackground(BLACK);// clears backgournd and sets it black
 		DrawRectangle(0, 0, (WIDTH / 2), HEIGHT, BLACK);
 		DrawRectangle((WIDTH / 2), 0, (WIDTH / 2), HEIGHT, WHITE);
-		DrawRectangle(player.x, player.y, player.width, player.height, WHITE); // draws a paddle using variables from the player struct
-		DrawRectangle(cpu.x, cpu.y, cpu.width, cpu.height, BLACK);// draws a paddle using variables from the CPU struct
-		DrawText(intTochar(player.score), (WIDTH / 2) - 200, 30, 48, WHITE);// sets players score onto the screen not working
-		DrawText(intTochar(cpu.score), (WIDTH / 2) + 200, 30, 48, BLACK);// sets cpu score onto screen not working odd
+		DrawRectangle(player1.p1x, player1.p1y, player1.width, player1.height, WHITE); // draws a paddle using variables from the player struct
+		DrawRectangle(player2.p2x, player2.p2y, player2.width, player2.height, BLACK);// draws a paddle using variables from the CPU struct
+		DrawText(intTochar(player1.score), (WIDTH / 2) - 200, 30, 48, WHITE);// sets players score onto the screen not working
+		DrawText(intTochar(player2.score), (WIDTH / 2) + 200, 30, 48, BLACK);// sets cpu score onto screen not working odd
 
-		if (checkCollision(player.x, ball.x, player.y, ball.y, player.width, player.height, ball.j) || checkCollision(cpu.x, ball.x, cpu.y, ball.y, cpu.width, cpu.height, ball.j))
+		if (checkCollision(player1.p1x, ball.x, player1.p1y, ball.y, player1.width, player1.height, ball.j) || checkCollision(player2.p2x, ball.x, player2.p2y, ball.y, player2.width, player2.height, ball.j))
 		{
 			ball.Ballx = -1 * ball.Ballx;	//if collides with ball and player is a player multiply to reverse the balls trajectory
 		}
 
-		cpu.y = ball.y;// makes sure the cpu y position is always equal to balls y position
+		//cpu.y = ball.y;// makes sure the cpu y position is always equal to balls y position
 
 		if (ball.x < (WIDTH / 2)) DrawCircle(ball.x, ball.y, ball.j, WHITE); //this function draws a rectangle usig vairABLES FORM ball struct
 
@@ -85,7 +103,7 @@ int main()
 
 		if (ball.x < 5)
 		{
-			cpu.score++;
+			player2.score++;
 			ball.x = (WIDTH / 2) - ball.j;
 			ball.y = 120;
 			ball.Ballx = -5;
@@ -94,7 +112,7 @@ int main()
 		else if (ball.x > WIDTH - 5)
 		{
 
-			player.score++;
+			player1.score++;
 			ball.x = (WIDTH / 2) - ball.j;
 			ball.y = 120;
 			ball.Ballx = 5;
@@ -108,19 +126,29 @@ int main()
 		{
 			ball.Bally = -(ball.Bally);
 		}
-		
-		
-		// key inputs for player paddle
-		if (IsKeyDown(KEY_W) || IsKeyDown(KEY_UP))
-		{
 
-			if (player.y < 5);
-			else player.y -= 5;
-		}
-		else if (IsKeyDown(KEY_S) || IsKeyDown(KEY_DOWN))
+
+		// key inputs for player paddle
+		if (IsKeyDown(KEY_W)) //|| IsKeyDown(KEY_UP))
 		{
-			if (player.y > (HEIGHT - player.height));
-			else player.y += 5;
+			if (player1.p1y < 5);
+			else player1.p1y -= 5;
+		}
+		else if (IsKeyDown(KEY_S)) //|| IsKeyDown(KEY_DOWN))
+		{
+			if (player1.p1y > (HEIGHT - player1.height));
+			else player1.p1y += 5;
+		}
+
+		if (IsKeyDown(KEY_UP))// || IsKeyDown(KEY_UP))
+		{
+			if (player2.p2y > (HEIGHT - player2.height));
+			else player2.p2y -= 5;
+		}
+		else if (IsKeyDown(KEY_DOWN))// || IsKeyDown(KEY_DOWN))
+		{
+			if (player2.p2y > (HEIGHT - player2.height));
+			else player2.p2y += 5;
 		}
 
 	} while (!WindowShouldClose());

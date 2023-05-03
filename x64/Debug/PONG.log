@@ -1,7 +1,7 @@
 ﻿  PONG.cpp
-F:\GITKRAKEN\Assessment 4\PONG\PONG.cpp(76,15): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-F:\GITKRAKEN\Assessment 4\PONG\PONG.cpp(78,52): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-F:\GITKRAKEN\Assessment 4\PONG\PONG.cpp(78,44): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-F:\GITKRAKEN\Assessment 4\PONG\PONG.cpp(80,31): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-F:\GITKRAKEN\Assessment 4\PONG\PONG.cpp(80,23): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+F:\GITKRAKEN\Assessment 4\PONG\PONG.cpp(96,52): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+F:\GITKRAKEN\Assessment 4\PONG\PONG.cpp(96,44): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+F:\GITKRAKEN\Assessment 4\PONG\PONG.cpp(98,31): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+F:\GITKRAKEN\Assessment 4\PONG\PONG.cpp(98,23): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
   PONG.vcxproj -> F:\GITKRAKEN\Assessment 4\x64\Debug\PONG.exe
