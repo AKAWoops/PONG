@@ -143,7 +143,7 @@ int main()
 		}
 		if (IsKeyDown(KEY_UP))// || IsKeyDown(KEY_UP))
 		{
-			if (player2.p2y < 5);// (HEIGHT - player2.height));
+			if (player2.p2y < 5);//1 (HEIGHT - player2.height));
 			else player2.p2y -= 5;
 		}
 		else if (IsKeyDown(KEY_DOWN))// || IsKeyDown(KEY_DOWN))
