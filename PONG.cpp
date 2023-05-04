@@ -143,7 +143,7 @@ int main()
 		}
 		if (IsKeyDown(KEY_UP))// || IsKeyDown(KEY_UP))
 		{
-			if (player2.p2y > (HEIGHT - player2.height));
+			if (player2.p2y < 5);// (HEIGHT - player2.height));
 			else player2.p2y -= 5;
 		}
 		else if (IsKeyDown(KEY_DOWN))// || IsKeyDown(KEY_DOWN))
@@ -169,7 +169,7 @@ const char* intTochar(int a) {
 }
 
 bool checkCollision(int x1, float x2, int y1, float y2, int w1, int h1, float j) 
-{
+{                  // question for cliff should i change j to r for trajectory ? i think j is the correct statement
 	if (x1 <= x2 + j && y1 <= y2 + j &&
 		x2 <= x1 + w1 && y2 <= y1 + h1)
 	{
