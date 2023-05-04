@@ -27,10 +27,14 @@ struct player2
 	int score = 0;
 };
 
-//struct cpu
-//{
-//
-//};
+struct cpu
+{
+	int cpux;
+	int cpuy;
+	int width = 20;
+	int height = 70;
+	int score = 0;
+};
 
 struct ball 
 {
@@ -39,8 +43,6 @@ struct ball
 	float Ballx;
 	float Bally;
 	float j = 10.0;
-
-
 };
 
 const char* intTochar(int a);
@@ -57,9 +59,9 @@ int main()
 	player2.p2x = WIDTH - 35;
 	player2.p2y = 100;
 
-	/*struct player cpu;
-	cpu.x = WIDTH - 35;
-	cpu.y = 100;*/
+	struct cpu cpu;
+	cpu.cpux = WIDTH - 35;
+	cpu.cpuy = 100;
 
 	struct ball ball;
 	ball.x = (WIDTH / 2) - ball.j;
@@ -83,15 +85,17 @@ int main()
 		DrawRectangle((WIDTH / 2), 0, (WIDTH / 2), HEIGHT, WHITE);
 		DrawRectangle(player1.p1x, player1.p1y, player1.width, player1.height, WHITE); // draws a paddle using variables from the player struct
 		DrawRectangle(player2.p2x, player2.p2y, player2.width, player2.height, BLACK);// draws a paddle using variables from the CPU struct
-		DrawText(intTochar(player1.score), (WIDTH / 2) - 200, 30, 48, WHITE);// sets players score onto the screen not working
-		DrawText(intTochar(player2.score), (WIDTH / 2) + 200, 30, 48, BLACK);// sets cpu score onto screen not working odd
+		//DrawText(intTochar(player1.score), (WIDTH / 2) - 200, 30, 48, GREEN);// sets players score onto the screen not working
+		//DrawText(intTochar(player2.score), (WIDTH / 2) + 200, 30, 48, GREEN);// sets cpu score onto screen not working odd
+		DrawText(TextFormat("Score: %04i", player1.score), /*(WIDTH / 2)*/ - 200, 80, 20, RED);
+		DrawText(TextFormat("Score: %04i", player2.score), /*(WIDTH / 2)*/ + 200, 80, 20, RED);
 
 		if (checkCollision(player1.p1x, ball.x, player1.p1y, ball.y, player1.width, player1.height, ball.j) || checkCollision(player2.p2x, ball.x, player2.p2y, ball.y, player2.width, player2.height, ball.j))
 		{
 			ball.Ballx = -1 * ball.Ballx;	//if collides with ball and player is a player multiply to reverse the balls trajectory
 		}
 
-		//cpu.y = ball.y;// makes sure the cpu y position is always equal to balls y position
+		cpu.cpuy = ball.y;// makes sure the cpu y position is always equal to balls y position
 
 		if (ball.x < (WIDTH / 2)) DrawCircle(ball.x, ball.y, ball.j, WHITE); //this function draws a rectangle usig vairABLES FORM ball struct
 
@@ -107,7 +111,6 @@ int main()
 			ball.x = (WIDTH / 2) - ball.j;
 			ball.y = 120;
 			ball.Ballx = -5;
-
 		}
 		else if (ball.x > WIDTH - 5)
 		{
@@ -120,7 +123,6 @@ int main()
 		if (ball.y < 5)
 		{
 			ball.Bally = -1 * ball.Bally;
-
 		}
 		else if (ball.y > HEIGHT - 5)
 		{
@@ -139,7 +141,6 @@ int main()
 			if (player1.p1y > (HEIGHT - player1.height));
 			else player1.p1y += 5;
 		}
-
 		if (IsKeyDown(KEY_UP))// || IsKeyDown(KEY_UP))
 		{
 			if (player2.p2y > (HEIGHT - player2.height));
@@ -150,7 +151,7 @@ int main()
 			if (player2.p2y > (HEIGHT - player2.height));
 			else player2.p2y += 5;
 		}
-
+		
 	} while (!WindowShouldClose());
 		
 	CloseWindow();
