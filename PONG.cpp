@@ -87,8 +87,8 @@ int main()
 		DrawRectangle(player2.p2x, player2.p2y, player2.width, player2.height, BLACK);// draws a paddle using variables from the CPU struct
 		//DrawText(intTochar(player1.score), (WIDTH / 2) - 200, 30, 48, GREEN);// sets players score onto the screen not working
 		//DrawText(intTochar(player2.score), (WIDTH / 2) + 200, 30, 48, GREEN);// sets cpu score onto screen not working odd
-		DrawText(TextFormat("Score: %04i", player1.score), /*(WIDTH / 2)*/ - 200, 80, 20, RED);
-		DrawText(TextFormat("Score: %04i", player2.score), /*(WIDTH / 2)*/ + 200, 80, 20, RED);
+		DrawText(TextFormat("Score: %04i", player1.score), (WIDTH / 2) - 200, 80, 20, RED);
+		DrawText(TextFormat("Score: %04i", player2.score), (WIDTH / 2) + 200, 80, 20, RED);
 
 		if (checkCollision(player1.p1x, ball.x, player1.p1y, ball.y, player1.width, player1.height, ball.j) || checkCollision(player2.p2x, ball.x, player2.p2y, ball.y, player2.width, player2.height, ball.j))
 		{
