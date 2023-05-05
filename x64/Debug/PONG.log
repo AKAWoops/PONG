@@ -1,9 +1,7 @@
-﻿  Character.cpp
-  PONG.cpp
+﻿  PONG.cpp
 F:\GITKRAKEN\Assessment 4\PONG\PONG.cpp(103,18): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
 F:\GITKRAKEN\Assessment 4\PONG\PONG.cpp(105,52): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
 F:\GITKRAKEN\Assessment 4\PONG\PONG.cpp(105,44): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
 F:\GITKRAKEN\Assessment 4\PONG\PONG.cpp(107,31): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
 F:\GITKRAKEN\Assessment 4\PONG\PONG.cpp(107,23): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  Generating Code...
   PONG.vcxproj -> F:\GITKRAKEN\Assessment 4\x64\Debug\PONG.exe
