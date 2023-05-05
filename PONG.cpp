@@ -102,7 +102,7 @@ int main()
 
 		cpu.cpuy = ball.y;// makes sure the cpu y position is always equal to balls y position
 
-		if (ball.x < (WIDTH / 2)) DrawCircle(ball.x, ball.y, ball.j, WHITE); //this function draws a rectangle usig vairABLES FORM ball struct
+		if (ball.x < (WIDTH / 2)) DrawCircle(ball.x, ball.y, ball.j, WHITE); //this function draws a rectangle usig vairABLES From ball struct
 
 		else DrawCircle(ball.x, ball.y, ball.j, BLACK);
 		EndDrawing();
