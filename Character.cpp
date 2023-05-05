@@ -1,5 +1,5 @@
 #include "Character.h"
-#include <raylib.h>
+//#include <raylib.h>
 
 Character::Character()
 {
@@ -13,9 +13,9 @@ Character::Character(int _x, int _y)
 	y = _y;
 }
 
-void Character::Draw()
+void Character::Draw(Color color)
 {
-	DrawRectangle(x, y, width, height, PURPLE); // draws a paddle using variables from the player struct
+	DrawRectangle(x, y, width, height, color); // draws a paddle using variables from the player struct
 	//DrawRectangle(x, y, width, height, BLACK);
 }
 

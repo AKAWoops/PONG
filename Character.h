@@ -1,4 +1,5 @@
 #pragma once
+#include <raylib.h>
 class Character
 {
 private:
@@ -15,7 +16,7 @@ public:
 	Character();
 	Character(int _x, int _y);
 	
-	void Draw();
+	void Draw(Color color);
 	int GetScore();
 	void IncScore();
 

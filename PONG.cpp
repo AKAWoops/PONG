@@ -45,7 +45,7 @@ struct ball
 	float j = 10.0;
 };
 
-const char* intTochar(int a);
+//const char* intTochar(int a);
 bool checkCollision(int x1, float x2, int y1, float y2, int w1, int h1, float j);
 
 	Character player1;
@@ -86,11 +86,10 @@ int main()
 		DrawRectangle(0, 0, (WIDTH / 2), HEIGHT, BLACK);
 		DrawRectangle((WIDTH / 2), 0, (WIDTH / 2), HEIGHT, WHITE);
 		//DrawRectangle(player1.p1x, player1.p1y, player1.width, player1.height, WHITE); // draws a paddle using variables from the player struct
-		player1.Draw();
+		player1.Draw(WHITE);
 		//DrawRectangle(player2.x, player2.y, player2.width, player2.height, BLACK);// draws a paddle using variables from the CPU struct
-		player2.Draw();
+		player2.Draw(BLACK);
 		//DrawText(intTochar(player1.score), (WIDTH / 2) - 200, 30, 48, GREEN);// sets players score onto the screen not working
-		
 		//DrawText(intTochar(player2.score), (WIDTH / 2) + 200, 30, 48, GREEN);// sets cpu score onto screen not working odd
 		DrawText(TextFormat("Score: %04i", player1.GetScore()), (WIDTH / 2) - 200, 80, 20, RED);
 		DrawText(TextFormat("Score: %04i", player2.GetScore()), (WIDTH / 2) + 200, 80, 20, RED);
